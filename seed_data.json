@@ -1,0 +1,362 @@
+{
+  "definitions": {
+    "الموردين_Suppliers": [
+      "الشركة العربية السعودية لزيوت التشحيم",
+      "الشركة المتحدة لزيوت التشحيم",
+      "شركة الصافي",
+      "شركة المنصور للنقليات",
+      "شركة زياد العالمية",
+      "مؤسسة عبد الرحمن الشايع",
+      "مؤسسة عبد العزيز الفريح"
+    ],
+    "الفروع_Branches": [
+      "فرع الدمام",
+      "فرع الرياض",
+      "فرع المدينة المنورة",
+      "فرع أبها",
+      "فرع جدة",
+      "فرع حائل",
+      "فرع مكة"
+    ],
+    "مجموعات_الأصناف_Categories": [
+      "EQUIPMENT BELTS - سيور معدات",
+      "EQUIPMENT SPARE PARTS - قطع غيار معدات",
+      "EQUP. FILTERS - فلاتر معدات ",
+      "EQUP. TIRES - إطارات معدات",
+      "FUEL - وقود",
+      "OILS AND GREASES - زيوت وشحوم",
+      "VEHICLES BELTS - سيور سيارات",
+      "VEHICLES FILTERS - فلاتر سيارات",
+      "VEHICLES SPARE PARTS - قطع غيار سيارات",
+      "VEHICLES TIRES - إطارات سيارات",
+      "قطع غيار كسارت - CRUSHERS SPARE PARTS"
+    ],
+    "الوحدات_Units": [
+      "( 180 kg ) DRUM",
+      "208 LT DRUM",
+      "PIECE - حبة",
+      "برميل - DRUM",
+      "لتر - LITER"
+    ],
+    "المستودعات_الأقسام_Departments": [
+      "مستودع الإطارات والبطاريات",
+      "مستودع المحروقات والزيوت والشحوم",
+      "مستودع قطع غيار السيارات",
+      "مستودع قطع غيار المعدات"
+    ],
+    "محررو_الطلبات_Editors": [
+      "السيد / أحمد محمود",
+      "السيد / أكرم الغامدي",
+      "السيد / إسلام سمير",
+      "السيد / حسن علي",
+      "السيد / خالد القدس",
+      "السيد / زياد علي",
+      "السيد / محمد جمال",
+      "السيد / محمد عسكر",
+      "السيد / محمود صالح",
+      "السيد / ياسر خليل"
+    ],
+    "المدراء_المسؤولون_Directors": [
+      "السيد / أبو عبدالله",
+      "السيد / أحمد يعقوب",
+      "السيد / خبور خير",
+      "السيد / سالم شباني",
+      "السيد / عادل حنفي",
+      "السيد / عمر الحسيني",
+      "السيد / عمر حجي",
+      "السيد / محمد طاهر",
+      "السيد / نزار سليمان",
+      "السيد / هادي سالم"
+    ]
+  },
+  "items": [
+    {
+      "Supplier": "الشركة العربية السعودية لزيوت التشحيم",
+      "Category": "OILS AND GREASES - زيوت وشحوم",
+      "ItemCode": "2350-90",
+      "ItemDescription": "زيت بترومين ديزل HD3/50",
+      "Unit": "لتر - LITER",
+      "UnitPrice": 6.0
+    },
+    {
+      "Supplier": "الشركة العربية السعودية لزيوت التشحيم",
+      "Category": "OILS AND GREASES - زيوت وشحوم",
+      "ItemCode": "2350-35",
+      "ItemDescription": "زيت بترومين ديزل HD3/50",
+      "Unit": "برميل - DRUM",
+      "UnitPrice": 1500.0
+    },
+    {
+      "Supplier": "الشركة العربية السعودية لزيوت التشحيم",
+      "Category": "OILS AND GREASES - زيوت وشحوم",
+      "ItemCode": "5070-35",
+      "ItemDescription": "زيت بترومين هيدروليك عيار AW68",
+      "Unit": "208 LT DRUM",
+      "UnitPrice": 1350.0
+    },
+    {
+      "Supplier": "الشركة العربية السعودية لزيوت التشحيم",
+      "Category": "OILS AND GREASES - زيوت وشحوم",
+      "ItemCode": "3010-35",
+      "ItemDescription": "زيت  تروس عيار 90",
+      "Unit": "برميل - DRUM",
+      "UnitPrice": 1500.0
+    },
+    {
+      "Supplier": "الشركة العربية السعودية لزيوت التشحيم",
+      "Category": "OILS AND GREASES - زيوت وشحوم",
+      "ItemCode": "5350-35",
+      "ItemDescription": "زيت تروس - EP220",
+      "Unit": "208 LT DRUM",
+      "UnitPrice": 1550.0
+    },
+    {
+      "Supplier": "الشركة المتحدة لزيوت التشحيم",
+      "Category": "OILS AND GREASES - زيوت وشحوم",
+      "ItemCode": "50CS",
+      "ItemDescription": "زيت ماكينة 50CS",
+      "Unit": "برميل - DRUM",
+      "UnitPrice": 1500.0
+    },
+    {
+      "Supplier": "الشركة المتحدة لزيوت التشحيم",
+      "Category": "OILS AND GREASES - زيوت وشحوم",
+      "ItemCode": "50CS-B",
+      "ItemDescription": "زيت ماكينة 50CS",
+      "Unit": "لتر - LITER",
+      "UnitPrice": 5.35
+    },
+    {
+      "Supplier": "الشركة المتحدة لزيوت التشحيم",
+      "Category": "OILS AND GREASES - زيوت وشحوم",
+      "ItemCode": "60CS",
+      "ItemDescription": "زيت ماكينة 60CS",
+      "Unit": "لتر - LITER",
+      "UnitPrice": 6.5
+    },
+    {
+      "Supplier": "شركة الصافي",
+      "Category": "EQUP. TIRES - إطارات معدات",
+      "ItemCode": "TRMSGRTB68VB011",
+      "ItemDescription": "1100/R-20/16/RS02 MARCHA3 - إطار لوبد",
+      "Unit": "PIECE - حبة",
+      "UnitPrice": 1350.0
+    },
+    {
+      "Supplier": "شركة الصافي",
+      "Category": "EQUP. TIRES - إطارات معدات",
+      "ItemCode": "TRADHRTB68VJ011",
+      "ItemDescription": "كفرات لوبد - 1100/R-20/18/GL74 ADVANC",
+      "Unit": "PIECE - حبة",
+      "UnitPrice": 1000.0
+    },
+    {
+      "Supplier": "شركة المنصور للنقليات",
+      "Category": "FUEL - وقود",
+      "ItemCode": "MAN-001",
+      "ItemDescription": "GASOLINE",
+      "Unit": "PIECE - حبة",
+      "UnitPrice": 0.222
+    },
+    {
+      "Supplier": "شركة المنصور للنقليات",
+      "Category": "FUEL - وقود",
+      "ItemCode": "MAN-002",
+      "ItemDescription": "ديزل 001",
+      "Unit": "لتر - LITER",
+      "UnitPrice": 0.215
+    },
+    {
+      "Supplier": "شركة المنصور للنقليات",
+      "Category": "FUEL - وقود",
+      "ItemCode": "MAN-003",
+      "ItemDescription": "ديزل 002",
+      "Unit": "لتر - LITER",
+      "UnitPrice": 0.22
+    },
+    {
+      "Supplier": "شركة المنصور للنقليات",
+      "Category": "FUEL - وقود",
+      "ItemCode": "MAN-004",
+      "ItemDescription": "بنزين 95",
+      "Unit": "لتر - LITER",
+      "UnitPrice": 0.55
+    },
+    {
+      "Supplier": "شركة المنصور للنقليات",
+      "Category": "FUEL - وقود",
+      "ItemCode": "MAN-005",
+      "ItemDescription": "GASOLINE",
+      "Unit": "لتر - LITER",
+      "UnitPrice": 2.55
+    },
+    {
+      "Supplier": "شركة المنصور للنقليات",
+      "Category": "وقود - FUEL",
+      "ItemCode": "MAN-006",
+      "ItemDescription": "ديزل 003",
+      "Unit": "لتر - LITER",
+      "UnitPrice": 0.225
+    },
+    {
+      "Supplier": "شركة المنصور للنقليات",
+      "Category": "FUEL - وقود",
+      "ItemCode": "MAN-007",
+      "ItemDescription": "بنزين 91",
+      "Unit": "لتر - LITER",
+      "UnitPrice": 0.4
+    },
+    {
+      "Supplier": "شركة المنصور للنقليات",
+      "Category": "FUEL - وقود",
+      "ItemCode": "MAN-008",
+      "ItemDescription": "ديزل 004",
+      "Unit": "لتر - LITER",
+      "UnitPrice": 0.24
+    },
+    {
+      "Supplier": "شركة المنصور للنقليات",
+      "Category": "FUEL - وقود",
+      "ItemCode": "MAN-009",
+      "ItemDescription": "GASOLINE-99",
+      "Unit": "لتر - LITER",
+      "UnitPrice": 0.25
+    },
+    {
+      "Supplier": "شركة المنصور للنقليات",
+      "Category": "FUEL - وقود",
+      "ItemCode": "MAN-010",
+      "ItemDescription": "GASOLINE-88",
+      "Unit": "لتر - LITER",
+      "UnitPrice": 0.22
+    },
+    {
+      "Supplier": "شركة زياد العالمية",
+      "Category": "OILS AND GREASES - زيوت وشحوم",
+      "ItemCode": "ZAD-001",
+      "ItemDescription": "MOBILE DEL VAC 1340",
+      "Unit": "208 LT DRUM",
+      "UnitPrice": 1250.0
+    },
+    {
+      "Supplier": "شركة زياد العالمية",
+      "Category": "OILS AND GREASES - زيوت وشحوم",
+      "ItemCode": "ZAD-002",
+      "ItemDescription": "MOBILE DEL VAC 1340",
+      "Unit": "لتر - LITER",
+      "UnitPrice": 5.45
+    },
+    {
+      "Supplier": "شركة زياد العالمية",
+      "Category": "OILS AND GREASES - زيوت وشحوم",
+      "ItemCode": "ZAD-003",
+      "ItemDescription": "NUTO 68",
+      "Unit": "لتر - LITER",
+      "UnitPrice": 4.6
+    },
+    {
+      "Supplier": "شركة زياد العالمية",
+      "Category": "OILS AND GREASES - زيوت وشحوم",
+      "ItemCode": "ZAD-004",
+      "ItemDescription": "MOBIL HYDROLIC 10W",
+      "Unit": "لتر - LITER",
+      "UnitPrice": 4.5
+    },
+    {
+      "Supplier": "شركة زياد العالمية",
+      "Category": "OILS AND GREASES - زيوت وشحوم",
+      "ItemCode": "ZAD-005",
+      "ItemDescription": "MOBIL GEAR 600*P220",
+      "Unit": "208 LT DRUM",
+      "UnitPrice": 1375.0
+    },
+    {
+      "Supplier": "شركة زياد العالمية",
+      "Category": "OILS AND GREASES - زيوت وشحوم",
+      "ItemCode": "ZAD-006",
+      "ItemDescription": "MOBILUBE HD 80W90 GLS",
+      "Unit": "208 LT DRUM",
+      "UnitPrice": 1375.0
+    },
+    {
+      "Supplier": "شركة زياد العالمية",
+      "Category": "OILS AND GREASES - زيوت وشحوم",
+      "ItemCode": "ZAD-007",
+      "ItemDescription": "GREASE MP2",
+      "Unit": "( 180 kg ) DRUM",
+      "UnitPrice": 1550.0
+    },
+    {
+      "Supplier": "مؤسسة عبد الرحمن الشايع",
+      "Category": "VEHICLES FILTERS - فلاتر سيارات",
+      "ItemCode": "TRE1258",
+      "ItemDescription": "فلتر هواء مرسيدس LB",
+      "Unit": "PIECE - حبة",
+      "UnitPrice": 130.0
+    },
+    {
+      "Supplier": "مؤسسة عبد الرحمن الشايع",
+      "Category": "VEHICLES FILTERS - فلاتر سيارات",
+      "ItemCode": "TRE1219",
+      "ItemDescription": "فلتر هواء MAN",
+      "Unit": "PIECE - حبة",
+      "UnitPrice": 100.0
+    },
+    {
+      "Supplier": "مؤسسة عبد الرحمن الشايع",
+      "Category": "VEHICLES FILTERS - فلاتر سيارات",
+      "ItemCode": "TRE1233",
+      "ItemDescription": "فلتر زيت مرسيدس LB",
+      "Unit": "PIECE - حبة",
+      "UnitPrice": 70.0
+    },
+    {
+      "Supplier": "مؤسسة عبد الرحمن الشايع",
+      "Category": "VEHICLES FILTERS - فلاتر سيارات",
+      "ItemCode": "TRE1232",
+      "ItemDescription": "فلتر زيت MAN",
+      "Unit": "PIECE - حبة",
+      "UnitPrice": 60.0
+    },
+    {
+      "Supplier": "مؤسسة عبد الرحمن الشايع",
+      "Category": "EQUP. FILTERS - فلاتر معدات ",
+      "ItemCode": "TRE1223",
+      "ItemDescription": "فلتر هواء تويوتا",
+      "Unit": "PIECE - حبة",
+      "UnitPrice": 50.0
+    },
+    {
+      "Supplier": "مؤسسة عبد الرحمن الشايع",
+      "Category": "VEHICLES FILTERS - فلاتر سيارات",
+      "ItemCode": "TRE1224",
+      "ItemDescription": "فلتر هواء مازدا",
+      "Unit": "PIECE - حبة",
+      "UnitPrice": 45.0
+    },
+    {
+      "Supplier": "مؤسسة عبد العزيز الفريح",
+      "Category": "VEHICLES BELTS - سيور سيارات",
+      "ItemCode": "1504056",
+      "ItemDescription": "سير ألماني - OPTIBELT B-56",
+      "Unit": "PIECE - حبة",
+      "UnitPrice": 40.0
+    },
+    {
+      "Supplier": "مؤسسة عبد العزيز الفريح",
+      "Category": "EQUIPMENT BELTS - سيور معدات",
+      "ItemCode": "1504086",
+      "ItemDescription": "سير ألماني - OPTIBELT B-86",
+      "Unit": "PIECE - حبة",
+      "UnitPrice": 50.0
+    },
+    {
+      "Supplier": "مؤسسة عبد العزيز الفريح",
+      "Category": "EQUIPMENT BELTS - سيور معدات",
+      "ItemCode": "1504122",
+      "ItemDescription": "سير ألماني OPTIBELT B-122",
+      "Unit": "PIECE - حبة",
+      "UnitPrice": 70.0
+    }
+  ]
+}
