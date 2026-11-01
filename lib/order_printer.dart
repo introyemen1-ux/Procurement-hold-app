@@ -3,7 +3,7 @@ import 'package:pdf/widgets.dart' as pw;
 import 'package:printing/printing.dart';
 
 class OrderPrinter {
-  static Future<void> printOrder(Map<String, dynamic> order, List> items) async {
+  static Future<void> printOrder(Map<String, dynamic> order, var items) async {
     final pdf = pw.Document();
 
     pdf.addPage(
@@ -57,7 +57,7 @@ class OrderPrinter {
                 pw.Divider(height: 20),
                 pw.TableHelper.fromTextArray(
                   headers: ['م', 'رقم الصنف', 'وصف الصنف', 'الوحدة', 'الكمية', 'السعر', 'المبلغ'],
-                  data: items.asMap().entries.map((e) {
+                  data: items.asMap().entries.map<List<String>>((e) {
                     final item = e.value;
                     return [
                       (e.key + 1).toString(),
