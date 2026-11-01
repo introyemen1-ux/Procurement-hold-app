@@ -48,7 +48,7 @@ class _NewOrderScreenState extends State<NewOrderScreen> {
                   isExpanded: true,
                   decoration: const InputDecoration(labelText: 'اختر الصنف'),
                   items: itemsList.map((item) {
-                    return DropdownMenuItem(
+                    return DropdownMenuItem>(
                       value: item,
                       child: Text(
                         "${item['item_code']} - ${item['description']}",
