@@ -16,7 +16,7 @@ class _NewOrderScreenState extends State<NewOrderScreen> {
   String _selectedDirector = 'السيد / خبور خير';
   DateTime _selectedDate = DateTime.now();
 
-  List> _orderItems = [];
+  var _orderItems = [];
 
   @override
   void initState() {
@@ -30,8 +30,8 @@ class _NewOrderScreenState extends State<NewOrderScreen> {
       );
 
   void _addItemDialog() async {
-    List> itemsList = await DatabaseHelper.instance.searchItems('');
-    Map<String, dynamic>? selectedItem;
+    dynamic itemsList = await DatabaseHelper.instance.searchItems('');
+    dynamic selectedItem;
     final qtyController = TextEditingController(text: '1');
     final priceController = TextEditingController();
 
@@ -44,11 +44,11 @@ class _NewOrderScreenState extends State<NewOrderScreen> {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                DropdownButtonFormField>(
+                DropdownButtonFormField(
                   isExpanded: true,
                   decoration: const InputDecoration(labelText: 'اختر الصنف'),
-                  items: itemsList.map((item) {
-                    return DropdownMenuItem>(
+                  items: (itemsList as List).map<DropdownMenuItem>((item) {
+                    return DropdownMenuItem(
                       value: item,
                       child: Text(
                         "${item['item_code']} - ${item['description']}",
@@ -91,9 +91,9 @@ class _NewOrderScreenState extends State<NewOrderScreen> {
                   double price = double.tryParse(priceController.text) ?? 0.0;
                   setState(() {
                     _orderItems.add({
-                      'item_code': selectedItem!['item_code'],
-                      'description': selectedItem!['description'],
-                      'unit': selectedItem!['unit'],
+                      'item_code': selectedItem['item_code'],
+                      'description': selectedItem['description'],
+                      'unit': selectedItem['unit'],
                       'quantity': qty,
                       'unit_price': price,
                       'total': qty * price,
