@@ -3,22 +3,26 @@ import 'package:pdf/widgets.dart' as pw;
 import 'package:printing/printing.dart';
 
 class OrderPrinter {
-  static Future<void> printOrder(Map<String, dynamic> order, var items) async {
+  static Future<void> printOrder(Map<String, dynamic> order, List> items) async {
     final pdf = pw.Document();
+
+    final cairoRegular = await PdfGoogleFonts.cairoRegular();
+    final cairoBold = await PdfGoogleFonts.cairoBold();
+
+    final double totalAmount = items.fold(0.0, (double sum, item) {
+      final val = item['total'];
+      final num parsed = val is num ? val : (num.tryParse(val.toString()) ?? 0.0);
+      return sum + parsed.toDouble();
+    });
 
     pdf.addPage(
       pw.Page(
         pageFormat: PdfPageFormat.a4,
         theme: pw.ThemeData.withFont(
-          base: await PdfGoogleFonts.cairoRegular(),
-          bold: await PdfGoogleFonts.cairoBold(),
+          base: cairoRegular,
+          bold: cairoBold,
         ),
         build: (pw.Context context) {
-          final totalSum = items.fold<double>(
-            0.0,
-            (sum, item) => sum + ((item['total'] as num?)?.toDouble() ?? 0.0),
-          );
-
           return pw.Directionality(
             textDirection: pw.TextDirection.rtl,
             child: pw.Column(
@@ -57,16 +61,17 @@ class OrderPrinter {
                 pw.Divider(height: 20),
                 pw.TableHelper.fromTextArray(
                   headers: ['م', 'رقم الصنف', 'وصف الصنف', 'الوحدة', 'الكمية', 'السعر', 'المبلغ'],
-                  data: items.asMap().entries.map<List<String>>((e) {
-                    final item = e.value;
+                  data: items.asMap().entries.map((entry) {
+                    final int idx = entry.key;
+                    final item = entry.value;
                     return [
-                      (e.key + 1).toString(),
+                      (idx + 1).toString(),
                       item['item_code']?.toString() ?? '',
                       item['description']?.toString() ?? '',
                       item['unit']?.toString() ?? '',
                       item['quantity']?.toString() ?? '0',
-                      item['unit_price']?.toString() ?? '0',
-                      item['total']?.toString() ?? '0',
+                      item['unit_price']?.toString() ?? '0.0',
+                      item['total']?.toString() ?? '0.0',
                     ];
                   }).toList(),
                   headerStyle: pw.TextStyle(fontWeight: pw.FontWeight.bold),
@@ -76,7 +81,7 @@ class OrderPrinter {
                 pw.Align(
                   alignment: pw.Alignment.centerLeft,
                   child: pw.Text(
-                    "المبلغ الإجمالي: ${totalSum.toStringAsFixed(2)} ر.س",
+                    "المبلغ الإجمالي: ${totalAmount.toStringAsFixed(2)} ر.س",
                     style: pw.TextStyle(fontSize: 16, fontWeight: pw.FontWeight.bold),
                   ),
                 ),
