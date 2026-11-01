@@ -27,21 +27,17 @@ jobs:
           channel: 'stable'
           cache: true
 
-      - name: Setup Android Project Files
+      - name: Recreate Android Platform if missing
         run: |
           if [ ! -d "android" ]; then
-            flutter create --project-name procurement_app --org com.example --platforms=android .
+            flutter create --platforms=android --project-name procurement_app .
           fi
-          
-          APP_GRADLE="android/app/build.gradle"
-          if [ -f "$APP_GRADLE" ]; then
-            sed -i 's/compileSdkVersion .*/compileSdkVersion 34/g' "$APP_GRADLE" || true
-            sed -i 's/targetSdkVersion .*/targetSdkVersion 34/g' "$APP_GRADLE" || true
-            sed -i 's/minSdkVersion .*/minSdkVersion 21/g' "$APP_GRADLE" || true
-            sed -i 's/compileSdk = .*/compileSdk = 34/g' "$APP_GRADLE" || true
-            sed -i 's/targetSdk = .*/targetSdk = 34/g' "$APP_GRADLE" || true
-            sed -i 's/minSdk = .*/minSdk = 21/g' "$APP_GRADLE" || true
-          fi
+
+      - name: Set Android SDK Configuration
+        run: |
+          echo "flutter.compileSdkVersion=34" >> android/local.properties
+          echo "flutter.targetSdkVersion=34" >> android/local.properties
+          echo "flutter.minSdkVersion=21" >> android/local.properties
 
       - name: Install Dependencies
         run: flutter pub get
