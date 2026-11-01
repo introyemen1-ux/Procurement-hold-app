@@ -55,7 +55,7 @@ class OrderPrinter {
                   ],
                 ),
                 pw.Divider(height: 20),
-                pw.Table.fromTextArray(
+                pw.TableHelper.fromTextArray(
                   headers: ['م', 'رقم الصنف', 'وصف الصنف', 'الوحدة', 'الكمية', 'السعر', 'المبلغ'],
                   data: items.asMap().entries.map((e) {
                     final item = e.value;
