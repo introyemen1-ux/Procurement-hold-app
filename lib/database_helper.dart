@@ -79,44 +79,48 @@ class DatabaseHelper {
           'item_code': item['ItemCode'],
           'description': item['ItemDescription'],
           'unit': item['Unit'],
-          'unit_price': item['UnitPrice'] ?? 0.0,
+          'unit_price': (item['UnitPrice'] as num?)?.toDouble() ?? 0.0,
         });
       }
       await batch.commit(noResult: true);
     } catch (e) {
-      print('خطأ في تحميل البيانات الأولية: \$e');
+      print('خطأ في تحميل البيانات الأولية: $e');
     }
   }
 
-  Future<int> insertOrder(Map<String, dynamic> order, List<Map<String, dynamic>> items) async {
+  Future<int> insertOrder(Map<String, dynamic> order, List> items) async {
     final db = await instance.database;
     int orderNo = order['order_no'];
     await db.transaction((txn) async {
       await txn.insert('orders', order, conflictAlgorithm: ConflictAlgorithm.replace);
       for (var item in items) {
-        item['order_no'] = orderNo;
-        await txn.insert('order_items', item);
+        var mutableItem = Map<String, dynamic>.from(item);
+        mutableItem['order_no'] = orderNo;
+        await txn.insert('order_items', mutableItem);
       }
     });
     return orderNo;
   }
 
-  Future<List<Map<String, dynamic>>> getOrders() async {
+  Future<List>> getOrders() async {
     final db = await instance.database;
     return await db.query('orders', orderBy: 'order_no DESC');
   }
 
-  Future<List<Map<String, dynamic>>> getOrderItems(int orderNo) async {
+  Future<List>> getOrderItems(int orderNo) async {
     final db = await instance.database;
     return await db.query('order_items', where: 'order_no = ?', whereArgs: [orderNo]);
   }
 
-  Future<List<Map<String, dynamic>>> searchItems(String query) async {
+  Future<List>> searchItems(String query) async {
     final db = await instance.database;
+    if (query.isEmpty) {
+      return await db.query('items');
+    }
     return await db.query(
       'items',
       where: 'description LIKE ? OR item_code LIKE ?',
-      whereArgs: ['%\$query%', '%\$query%'],
+      whereArgs: ['%$query%', '%$query%'],
     );
   }
 }
