@@ -39,7 +39,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  List> _orders = [];
+  var _orders = [];
   bool _loading = true;
 
   @override
