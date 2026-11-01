@@ -141,129 +141,126 @@ class _NewOrderScreenState extends State<NewOrderScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('طلب شراء جديد')),
-      body: Directionality(
-        textDirection: TextDirection.rtl,
-        child: Padding(
-          padding: const EdgeInsets.all(12),
-          child: Column(
-            children: [
-              Card(
-                child: Padding(
-                  padding: const EdgeInsets.all(12),
-                  child: Column(
-                    children: [
-                      Row(
-                        children: [
-                          Expanded(
-                            child: TextField(
-                              controller: _orderNoController,
-                              decoration: const InputDecoration(labelText: 'رقم الطلب'),
-                              keyboardType: TextInputType.number,
-                            ),
-                          ),
-                          const SizedBox(width: 10),
-                          Expanded(
-                            child: Text(
-                              "التاريخ: ${DateFormat('yyyy-MM-dd').format(_selectedDate)}",
-                              style: const TextStyle(fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          Expanded(
-                            child: DropdownButtonFormField<String>(
-                              value: _selectedBranch,
-                              decoration: const InputDecoration(labelText: 'الفرع'),
-                              items: const [
-                                'فرع جدة',
-                                'فرع الرياض',
-                                'فرع الدمام',
-                                'فرع حائل',
-                                'فرع مكة',
-                                'فرع المدينة المنورة',
-                                'فرع أبها'
-                              ].map((b) => DropdownMenuItem(value: b, child: Text(b))).toList(),
-                              onChanged: (v) => setState(() => _selectedBranch = v!),
-                            ),
-                          ),
-                          const SizedBox(width: 10),
-                          Expanded(
-                            child: DropdownButtonFormField<String>(
-                              value: _selectedSupplier,
-                              decoration: const InputDecoration(labelText: 'المورد'),
-                              items: const [
-                                'مؤسسة عبد الرحمن الشايع',
-                                'الشركة العربية السعودية لزيوت التشحيم',
-                                'الشركة المتحدة لزيوت التشحيم',
-                                'شركة الصافي',
-                                'شركة المنصور للنقليات',
-                                'شركة زياد العالمية',
-                                'مؤسسة عبد العزيز الفريح'
-                              ]
-                                  .map((s) => DropdownMenuItem(
-                                        value: s,
-                                        child: Text(s, overflow: TextOverflow.ellipsis),
-                                      ))
-                                  .toList(),
-                              onChanged: (v) => setState(() => _selectedSupplier = v!),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              const SizedBox(height: 8),
-              Expanded(
-                child: _orderItems.isEmpty
-                    ? const Center(child: Text("لا توجد أصناف مضافة. اضغط 'إضافة صنف' للبدء"))
-                    : ListView.separated(
-                        itemCount: _orderItems.length,
-                        separatorBuilder: (_, __) => const Divider(height: 1),
-                        itemBuilder: (ctx, idx) {
-                          final item = _orderItems[idx];
-                          return ListTile(
-                            title: Text("${item['description']} (${item['item_code']})"),
-                            subtitle: Text("الكمية: ${item['quantity']} ${item['unit']} × ${item['unit_price']}"),
-                            trailing: Text("${item['total']} ر.س", style: const TextStyle(fontWeight: FontWeight.bold)),
-                          );
-                        },
-                      ),
-              ),
-              Container(
+      body: Padding(
+        padding: const EdgeInsets.all(12),
+        child: Column(
+          children: [
+            Card(
+              child: Padding(
                 padding: const EdgeInsets.all(12),
-                decoration: BoxDecoration(
-                  color: Colors.blue.shade50,
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                child: Column(
                   children: [
-                    Text("الإجمالي: ${_totalAmount.toStringAsFixed(2)} ر.س",
-                        style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
                     Row(
                       children: [
-                        OutlinedButton.icon(
-                          icon: const Icon(Icons.add),
-                          label: const Text('إضافة صنف'),
-                          onPressed: _addItemDialog,
+                        Expanded(
+                          child: TextField(
+                            controller: _orderNoController,
+                            decoration: const InputDecoration(labelText: 'رقم الطلب'),
+                            keyboardType: TextInputType.number,
+                          ),
                         ),
-                        const SizedBox(width: 8),
-                        ElevatedButton.icon(
-                          icon: const Icon(Icons.check),
-                          label: const Text('ترحيل'),
-                          onPressed: _saveOrder,
+                        const SizedBox(width: 10),
+                        Expanded(
+                          child: Text(
+                            "التاريخ: ${DateFormat('yyyy-MM-dd').format(_selectedDate)}",
+                            style: const TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: DropdownButtonFormField<String>(
+                            value: _selectedBranch,
+                            decoration: const InputDecoration(labelText: 'الفرع'),
+                            items: const [
+                              'فرع جدة',
+                              'فرع الرياض',
+                              'فرع الدمام',
+                              'فرع حائل',
+                              'فرع مكة',
+                              'فرع المدينة المنورة',
+                              'فرع أبها'
+                            ].map((b) => DropdownMenuItem(value: b, child: Text(b))).toList(),
+                            onChanged: (v) => setState(() => _selectedBranch = v!),
+                          ),
+                        ),
+                        const SizedBox(width: 10),
+                        Expanded(
+                          child: DropdownButtonFormField<String>(
+                            value: _selectedSupplier,
+                            decoration: const InputDecoration(labelText: 'المورد'),
+                            items: const [
+                              'مؤسسة عبد الرحمن الشايع',
+                              'الشركة العربية السعودية لزيوت التشحيم',
+                              'الشركة المتحدة لزيوت التشحيم',
+                              'شركة الصافي',
+                              'شركة المنصور للنقليات',
+                              'شركة زياد العالمية',
+                              'مؤسسة عبد العزيز الفريح'
+                            ]
+                                .map((s) => DropdownMenuItem(
+                                      value: s,
+                                      child: Text(s, overflow: TextOverflow.ellipsis),
+                                    ))
+                                .toList(),
+                            onChanged: (v) => setState(() => _selectedSupplier = v!),
+                          ),
                         ),
                       ],
                     ),
                   ],
                 ),
               ),
-            ],
-          ),
+            ),
+            const SizedBox(height: 8),
+            Expanded(
+              child: _orderItems.isEmpty
+                  ? const Center(child: Text("لا توجد أصناف مضافة. اضغط 'إضافة صنف' للبدء"))
+                  : ListView.separated(
+                      itemCount: _orderItems.length,
+                      separatorBuilder: (_, __) => const Divider(height: 1),
+                      itemBuilder: (ctx, idx) {
+                        final item = _orderItems[idx];
+                        return ListTile(
+                          title: Text("${item['description']} (${item['item_code']})"),
+                          subtitle: Text("الكمية: ${item['quantity']} ${item['unit']} × ${item['unit_price']}"),
+                          trailing: Text("${item['total']} ر.س", style: const TextStyle(fontWeight: FontWeight.bold)),
+                        );
+                      },
+                    ),
+            ),
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.blue.shade50,
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text("الإجمالي: ${_totalAmount.toStringAsFixed(2)} ر.س",
+                      style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                  Row(
+                    children: [
+                      OutlinedButton.icon(
+                        icon: const Icon(Icons.add),
+                        label: const Text('إضافة صنف'),
+                        onPressed: _addItemDialog,
+                      ),
+                      const SizedBox(width: 8),
+                      ElevatedButton.icon(
+                        icon: const Icon(Icons.check),
+                        label: const Text('ترحيل'),
+                        onPressed: _saveOrder,
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ],
         ),
       ),
     );
