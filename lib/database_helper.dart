@@ -88,7 +88,7 @@ class DatabaseHelper {
     }
   }
 
-  Future<int> insertOrder(Map<String, dynamic> order, List> items) async {
+  Future<int> insertOrder(Map<String, dynamic> order, var items) async {
     final db = await instance.database;
     int orderNo = order['order_no'];
     await db.transaction((txn) async {
