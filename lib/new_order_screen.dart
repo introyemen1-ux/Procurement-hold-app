@@ -16,7 +16,7 @@ class _NewOrderScreenState extends State<NewOrderScreen> {
   String _selectedDirector = 'السيد / خبور خير';
   DateTime _selectedDate = DateTime.now();
 
-  List<Map<String, dynamic>> _orderItems = [];
+  List> _orderItems = [];
 
   @override
   void initState() {
@@ -24,11 +24,13 @@ class _NewOrderScreenState extends State<NewOrderScreen> {
     _orderNoController.text = (1000 + DateTime.now().minute * 10 + DateTime.now().second).toString();
   }
 
-  double get _totalAmount =>
-      _orderItems.fold(0.0, (sum, item) => sum + (item['total'] as double));
+  double get _totalAmount => _orderItems.fold(
+        0.0,
+        (sum, item) => sum + ((item['total'] as num?)?.toDouble() ?? 0.0),
+      );
 
   void _addItemDialog() async {
-    List<Map<String, dynamic>> itemsList = await DatabaseHelper.instance.searchItems('');
+    List> itemsList = await DatabaseHelper.instance.searchItems('');
     Map<String, dynamic>? selectedItem;
     final qtyController = TextEditingController(text: '1');
     final priceController = TextEditingController();
@@ -37,19 +39,22 @@ class _NewOrderScreenState extends State<NewOrderScreen> {
       context: context,
       builder: (ctx) => StatefulBuilder(
         builder: (context, setDialogState) => AlertDialog(
-          title: Text('إضافة صنف للطلب', textAlign: TextAlign.right),
+          title: const Text('إضافة صنف للطلب', textAlign: TextAlign.right),
           content: SingleChildScrollView(
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                DropdownButtonFormField<Map<String, dynamic>>(
+                DropdownButtonFormField>(
                   isExpanded: true,
-                  decoration: InputDecoration(labelText: 'اختر الصنف'),
+                  decoration: const InputDecoration(labelText: 'اختر الصنف'),
                   items: itemsList.map((item) {
                     return DropdownMenuItem(
                       value: item,
-                      child: Text("\${item['item_code']} - \${item['description']}",
-                          style: TextStyle(fontSize: 12), overflow: TextOverflow.ellipsis),
+                      child: Text(
+                        "${item['item_code']} - ${item['description']}",
+                        style: const TextStyle(fontSize: 12),
+                        overflow: TextOverflow.ellipsis,
+                      ),
                     );
                   }).toList(),
                   onChanged: (val) {
@@ -59,16 +64,16 @@ class _NewOrderScreenState extends State<NewOrderScreen> {
                     });
                   },
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 TextField(
                   controller: qtyController,
-                  decoration: InputDecoration(labelText: 'الكمية المطلوبة'),
+                  decoration: const InputDecoration(labelText: 'الكمية المطلوبة'),
                   keyboardType: TextInputType.number,
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 TextField(
                   controller: priceController,
-                  decoration: InputDecoration(labelText: 'سعر الوحدة'),
+                  decoration: const InputDecoration(labelText: 'سعر الوحدة'),
                   keyboardType: TextInputType.number,
                 ),
               ],
@@ -77,7 +82,7 @@ class _NewOrderScreenState extends State<NewOrderScreen> {
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(ctx),
-              child: Text('إلغاء'),
+              child: const Text('إلغاء'),
             ),
             ElevatedButton(
               onPressed: () {
@@ -97,7 +102,7 @@ class _NewOrderScreenState extends State<NewOrderScreen> {
                   Navigator.pop(ctx);
                 }
               },
-              child: Text('إضافة'),
+              child: const Text('إضافة'),
             ),
           ],
         ),
@@ -108,7 +113,7 @@ class _NewOrderScreenState extends State<NewOrderScreen> {
   void _saveOrder() async {
     if (_orderItems.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('الرجاء إضافة أصناف أولاً للطلب')),
+        const SnackBar(content: Text('الرجاء إضافة أصناف أولاً للطلب')),
       );
       return;
     }
@@ -127,7 +132,7 @@ class _NewOrderScreenState extends State<NewOrderScreen> {
     }, _orderItems);
 
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('تم ترحيل الطلب بنجاح رقم: \$orderNumber')),
+      SnackBar(content: Text('تم ترحيل الطلب بنجاح رقم: $orderNumber')),
     );
     Navigator.pop(context, true);
   }
@@ -135,16 +140,16 @@ class _NewOrderScreenState extends State<NewOrderScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('طلب شراء جديد')),
+      appBar: AppBar(title: const Text('طلب شراء جديد')),
       body: Directionality(
         textDirection: TextDirection.rtl,
         child: Padding(
-          padding: EdgeInsets.all(12),
+          padding: const EdgeInsets.all(12),
           child: Column(
             children: [
               Card(
                 child: Padding(
-                  padding: EdgeInsets.all(12),
+                  padding: const EdgeInsets.all(12),
                   child: Column(
                     children: [
                       Row(
@@ -152,15 +157,15 @@ class _NewOrderScreenState extends State<NewOrderScreen> {
                           Expanded(
                             child: TextField(
                               controller: _orderNoController,
-                              decoration: InputDecoration(labelText: 'رقم الطلب'),
+                              decoration: const InputDecoration(labelText: 'رقم الطلب'),
                               keyboardType: TextInputType.number,
                             ),
                           ),
-                          SizedBox(width: 10),
+                          const SizedBox(width: 10),
                           Expanded(
                             child: Text(
-                              "التاريخ: \${DateFormat('yyyy-MM-dd').format(_selectedDate)}",
-                              style: TextStyle(fontWeight: FontWeight.bold),
+                              "التاريخ: ${DateFormat('yyyy-MM-dd').format(_selectedDate)}",
+                              style: const TextStyle(fontWeight: FontWeight.bold),
                             ),
                           ),
                         ],
@@ -170,19 +175,25 @@ class _NewOrderScreenState extends State<NewOrderScreen> {
                           Expanded(
                             child: DropdownButtonFormField<String>(
                               value: _selectedBranch,
-                              decoration: InputDecoration(labelText: 'الفرع'),
-                              items: ['فرع جدة', 'فرع الرياض', 'فرع الدمام', 'فرع حائل', 'فرع مكة', 'فرع المدينة المنورة', 'فرع أبها']
-                                  .map((b) => DropdownMenuItem(value: b, child: Text(b)))
-                                  .toList(),
+                              decoration: const InputDecoration(labelText: 'الفرع'),
+                              items: const [
+                                'فرع جدة',
+                                'فرع الرياض',
+                                'فرع الدمام',
+                                'فرع حائل',
+                                'فرع مكة',
+                                'فرع المدينة المنورة',
+                                'فرع أبها'
+                              ].map((b) => DropdownMenuItem(value: b, child: Text(b))).toList(),
                               onChanged: (v) => setState(() => _selectedBranch = v!),
                             ),
                           ),
-                          SizedBox(width: 10),
+                          const SizedBox(width: 10),
                           Expanded(
                             child: DropdownButtonFormField<String>(
                               value: _selectedSupplier,
-                              decoration: InputDecoration(labelText: 'المورد'),
-                              items: [
+                              decoration: const InputDecoration(labelText: 'المورد'),
+                              items: const [
                                 'مؤسسة عبد الرحمن الشايع',
                                 'الشركة العربية السعودية لزيوت التشحيم',
                                 'الشركة المتحدة لزيوت التشحيم',
@@ -190,8 +201,12 @@ class _NewOrderScreenState extends State<NewOrderScreen> {
                                 'شركة المنصور للنقليات',
                                 'شركة زياد العالمية',
                                 'مؤسسة عبد العزيز الفريح'
-                              ].map((s) => DropdownMenuItem(value: s, child: Text(s, overflow: TextOverflow.ellipsis)))
-                               .toList(),
+                              ]
+                                  .map((s) => DropdownMenuItem(
+                                        value: s,
+                                        child: Text(s, overflow: TextOverflow.ellipsis),
+                                      ))
+                                  .toList(),
                               onChanged: (v) => setState(() => _selectedSupplier = v!),
                             ),
                           ),
@@ -201,25 +216,25 @@ class _NewOrderScreenState extends State<NewOrderScreen> {
                   ),
                 ),
               ),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
               Expanded(
                 child: _orderItems.isEmpty
-                    ? Center(child: Text("لا توجد أصناف مضافة. اضغط 'إضافة صنف' للبدء"))
+                    ? const Center(child: Text("لا توجد أصناف مضافة. اضغط 'إضافة صنف' للبدء"))
                     : ListView.separated(
                         itemCount: _orderItems.length,
-                        separatorBuilder: (_, __) => Divider(height: 1),
+                        separatorBuilder: (_, __) => const Divider(height: 1),
                         itemBuilder: (ctx, idx) {
                           final item = _orderItems[idx];
                           return ListTile(
-                            title: Text("\${item['description']} (\${item['item_code']})"),
-                            subtitle: Text("الكمية: \${item['quantity']} \${item['unit']} × \${item['unit_price']}"),
-                            trailing: Text("\${item['total']} ر.س", style: TextStyle(fontWeight: FontWeight.bold)),
+                            title: Text("${item['description']} (${item['item_code']})"),
+                            subtitle: Text("الكمية: ${item['quantity']} ${item['unit']} × ${item['unit_price']}"),
+                            trailing: Text("${item['total']} ر.س", style: const TextStyle(fontWeight: FontWeight.bold)),
                           );
                         },
                       ),
               ),
               Container(
-                padding: EdgeInsets.all(12),
+                padding: const EdgeInsets.all(12),
                 decoration: BoxDecoration(
                   color: Colors.blue.shade50,
                   borderRadius: BorderRadius.circular(8),
@@ -227,19 +242,19 @@ class _NewOrderScreenState extends State<NewOrderScreen> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text("الإجمالي: \${_totalAmount.toStringAsFixed(2)} ر.س",
-                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                    Text("الإجمالي: ${_totalAmount.toStringAsFixed(2)} ر.س",
+                        style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
                     Row(
                       children: [
                         OutlinedButton.icon(
-                          icon: Icon(Icons.add),
-                          label: Text('إضافة صنف'),
+                          icon: const Icon(Icons.add),
+                          label: const Text('إضافة صنف'),
                           onPressed: _addItemDialog,
                         ),
-                        SizedBox(width: 8),
+                        const SizedBox(width: 8),
                         ElevatedButton.icon(
-                          icon: Icon(Icons.check),
-                          label: Text('ترحيل'),
+                          icon: const Icon(Icons.check),
+                          label: const Text('ترحيل'),
                           onPressed: _saveOrder,
                         ),
                       ],
