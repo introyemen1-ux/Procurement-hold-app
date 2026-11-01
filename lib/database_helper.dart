@@ -88,7 +88,7 @@ class DatabaseHelper {
     }
   }
 
-  Future<int> insertOrder(Map<String, dynamic> order, var items) async {
+  Future<int> insertOrder(Map<String, dynamic> order, dynamic items) async {
     final db = await instance.database;
     int orderNo = order['order_no'];
     await db.transaction((txn) async {
@@ -102,17 +102,17 @@ class DatabaseHelper {
     return orderNo;
   }
 
-  Future<List>> getOrders() async {
+  Future<dynamic> getOrders() async {
     final db = await instance.database;
     return await db.query('orders', orderBy: 'order_no DESC');
   }
 
-  Future<List>> getOrderItems(int orderNo) async {
+  Future<dynamic> getOrderItems(int orderNo) async {
     final db = await instance.database;
     return await db.query('order_items', where: 'order_no = ?', whereArgs: [orderNo]);
   }
 
-  Future<List>> searchItems(String query) async {
+  Future<dynamic> searchItems(String query) async {
     final db = await instance.database;
     if (query.isEmpty) {
       return await db.query('items');
