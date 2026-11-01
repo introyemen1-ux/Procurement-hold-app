@@ -1,362 +1,358 @@
-{
-  "definitions": {
-    "الموردين_Suppliers": [
-      "الشركة العربية السعودية لزيوت التشحيم",
-      "الشركة المتحدة لزيوت التشحيم",
-      "شركة الصافي",
-      "شركة المنصور للنقليات",
-      "شركة زياد العالمية",
-      "مؤسسة عبد الرحمن الشايع",
-      "مؤسسة عبد العزيز الفريح"
-    ],
-    "الفروع_Branches": [
-      "فرع الدمام",
-      "فرع الرياض",
-      "فرع المدينة المنورة",
-      "فرع أبها",
-      "فرع جدة",
-      "فرع حائل",
-      "فرع مكة"
-    ],
-    "مجموعات_الأصناف_Categories": [
-      "EQUIPMENT BELTS - سيور معدات",
-      "EQUIPMENT SPARE PARTS - قطع غيار معدات",
-      "EQUP. FILTERS - فلاتر معدات ",
-      "EQUP. TIRES - إطارات معدات",
-      "FUEL - وقود",
-      "OILS AND GREASES - زيوت وشحوم",
-      "VEHICLES BELTS - سيور سيارات",
-      "VEHICLES FILTERS - فلاتر سيارات",
-      "VEHICLES SPARE PARTS - قطع غيار سيارات",
-      "VEHICLES TIRES - إطارات سيارات",
-      "قطع غيار كسارت - CRUSHERS SPARE PARTS"
-    ],
-    "الوحدات_Units": [
-      "( 180 kg ) DRUM",
-      "208 LT DRUM",
-      "PIECE - حبة",
-      "برميل - DRUM",
-      "لتر - LITER"
-    ],
-    "المستودعات_الأقسام_Departments": [
-      "مستودع الإطارات والبطاريات",
-      "مستودع المحروقات والزيوت والشحوم",
-      "مستودع قطع غيار السيارات",
-      "مستودع قطع غيار المعدات"
-    ],
-    "محررو_الطلبات_Editors": [
-      "السيد / أحمد محمود",
-      "السيد / أكرم الغامدي",
-      "السيد / إسلام سمير",
-      "السيد / حسن علي",
-      "السيد / خالد القدس",
-      "السيد / زياد علي",
-      "السيد / محمد جمال",
-      "السيد / محمد عسكر",
-      "السيد / محمود صالح",
-      "السيد / ياسر خليل"
-    ],
-    "المدراء_المسؤولون_Directors": [
-      "السيد / أبو عبدالله",
-      "السيد / أحمد يعقوب",
-      "السيد / خبور خير",
-      "السيد / سالم شباني",
-      "السيد / عادل حنفي",
-      "السيد / عمر الحسيني",
-      "السيد / عمر حجي",
-      "السيد / محمد طاهر",
-      "السيد / نزار سليمان",
-      "السيد / هادي سالم"
-    ]
-  },
-  "items": [
-    {
-      "Supplier": "الشركة العربية السعودية لزيوت التشحيم",
-      "Category": "OILS AND GREASES - زيوت وشحوم",
-      "ItemCode": "2350-90",
-      "ItemDescription": "زيت بترومين ديزل HD3/50",
-      "Unit": "لتر - LITER",
-      "UnitPrice": 6.0
-    },
-    {
-      "Supplier": "الشركة العربية السعودية لزيوت التشحيم",
-      "Category": "OILS AND GREASES - زيوت وشحوم",
-      "ItemCode": "2350-35",
-      "ItemDescription": "زيت بترومين ديزل HD3/50",
-      "Unit": "برميل - DRUM",
-      "UnitPrice": 1500.0
-    },
-    {
-      "Supplier": "الشركة العربية السعودية لزيوت التشحيم",
-      "Category": "OILS AND GREASES - زيوت وشحوم",
-      "ItemCode": "5070-35",
-      "ItemDescription": "زيت بترومين هيدروليك عيار AW68",
-      "Unit": "208 LT DRUM",
-      "UnitPrice": 1350.0
-    },
-    {
-      "Supplier": "الشركة العربية السعودية لزيوت التشحيم",
-      "Category": "OILS AND GREASES - زيوت وشحوم",
-      "ItemCode": "3010-35",
-      "ItemDescription": "زيت  تروس عيار 90",
-      "Unit": "برميل - DRUM",
-      "UnitPrice": 1500.0
-    },
-    {
-      "Supplier": "الشركة العربية السعودية لزيوت التشحيم",
-      "Category": "OILS AND GREASES - زيوت وشحوم",
-      "ItemCode": "5350-35",
-      "ItemDescription": "زيت تروس - EP220",
-      "Unit": "208 LT DRUM",
-      "UnitPrice": 1550.0
-    },
-    {
-      "Supplier": "الشركة المتحدة لزيوت التشحيم",
-      "Category": "OILS AND GREASES - زيوت وشحوم",
-      "ItemCode": "50CS",
-      "ItemDescription": "زيت ماكينة 50CS",
-      "Unit": "برميل - DRUM",
-      "UnitPrice": 1500.0
-    },
-    {
-      "Supplier": "الشركة المتحدة لزيوت التشحيم",
-      "Category": "OILS AND GREASES - زيوت وشحوم",
-      "ItemCode": "50CS-B",
-      "ItemDescription": "زيت ماكينة 50CS",
-      "Unit": "لتر - LITER",
-      "UnitPrice": 5.35
-    },
-    {
-      "Supplier": "الشركة المتحدة لزيوت التشحيم",
-      "Category": "OILS AND GREASES - زيوت وشحوم",
-      "ItemCode": "60CS",
-      "ItemDescription": "زيت ماكينة 60CS",
-      "Unit": "لتر - LITER",
-      "UnitPrice": 6.5
-    },
-    {
-      "Supplier": "شركة الصافي",
-      "Category": "EQUP. TIRES - إطارات معدات",
-      "ItemCode": "TRMSGRTB68VB011",
-      "ItemDescription": "1100/R-20/16/RS02 MARCHA3 - إطار لوبد",
-      "Unit": "PIECE - حبة",
-      "UnitPrice": 1350.0
-    },
-    {
-      "Supplier": "شركة الصافي",
-      "Category": "EQUP. TIRES - إطارات معدات",
-      "ItemCode": "TRADHRTB68VJ011",
-      "ItemDescription": "كفرات لوبد - 1100/R-20/18/GL74 ADVANC",
-      "Unit": "PIECE - حبة",
-      "UnitPrice": 1000.0
-    },
-    {
-      "Supplier": "شركة المنصور للنقليات",
-      "Category": "FUEL - وقود",
-      "ItemCode": "MAN-001",
-      "ItemDescription": "GASOLINE",
-      "Unit": "PIECE - حبة",
-      "UnitPrice": 0.222
-    },
-    {
-      "Supplier": "شركة المنصور للنقليات",
-      "Category": "FUEL - وقود",
-      "ItemCode": "MAN-002",
-      "ItemDescription": "ديزل 001",
-      "Unit": "لتر - LITER",
-      "UnitPrice": 0.215
-    },
-    {
-      "Supplier": "شركة المنصور للنقليات",
-      "Category": "FUEL - وقود",
-      "ItemCode": "MAN-003",
-      "ItemDescription": "ديزل 002",
-      "Unit": "لتر - LITER",
-      "UnitPrice": 0.22
-    },
-    {
-      "Supplier": "شركة المنصور للنقليات",
-      "Category": "FUEL - وقود",
-      "ItemCode": "MAN-004",
-      "ItemDescription": "بنزين 95",
-      "Unit": "لتر - LITER",
-      "UnitPrice": 0.55
-    },
-    {
-      "Supplier": "شركة المنصور للنقليات",
-      "Category": "FUEL - وقود",
-      "ItemCode": "MAN-005",
-      "ItemDescription": "GASOLINE",
-      "Unit": "لتر - LITER",
-      "UnitPrice": 2.55
-    },
-    {
-      "Supplier": "شركة المنصور للنقليات",
-      "Category": "وقود - FUEL",
-      "ItemCode": "MAN-006",
-      "ItemDescription": "ديزل 003",
-      "Unit": "لتر - LITER",
-      "UnitPrice": 0.225
-    },
-    {
-      "Supplier": "شركة المنصور للنقليات",
-      "Category": "FUEL - وقود",
-      "ItemCode": "MAN-007",
-      "ItemDescription": "بنزين 91",
-      "Unit": "لتر - LITER",
-      "UnitPrice": 0.4
-    },
-    {
-      "Supplier": "شركة المنصور للنقليات",
-      "Category": "FUEL - وقود",
-      "ItemCode": "MAN-008",
-      "ItemDescription": "ديزل 004",
-      "Unit": "لتر - LITER",
-      "UnitPrice": 0.24
-    },
-    {
-      "Supplier": "شركة المنصور للنقليات",
-      "Category": "FUEL - وقود",
-      "ItemCode": "MAN-009",
-      "ItemDescription": "GASOLINE-99",
-      "Unit": "لتر - LITER",
-      "UnitPrice": 0.25
-    },
-    {
-      "Supplier": "شركة المنصور للنقليات",
-      "Category": "FUEL - وقود",
-      "ItemCode": "MAN-010",
-      "ItemDescription": "GASOLINE-88",
-      "Unit": "لتر - LITER",
-      "UnitPrice": 0.22
-    },
-    {
-      "Supplier": "شركة زياد العالمية",
-      "Category": "OILS AND GREASES - زيوت وشحوم",
-      "ItemCode": "ZAD-001",
-      "ItemDescription": "MOBILE DEL VAC 1340",
-      "Unit": "208 LT DRUM",
-      "UnitPrice": 1250.0
-    },
-    {
-      "Supplier": "شركة زياد العالمية",
-      "Category": "OILS AND GREASES - زيوت وشحوم",
-      "ItemCode": "ZAD-002",
-      "ItemDescription": "MOBILE DEL VAC 1340",
-      "Unit": "لتر - LITER",
-      "UnitPrice": 5.45
-    },
-    {
-      "Supplier": "شركة زياد العالمية",
-      "Category": "OILS AND GREASES - زيوت وشحوم",
-      "ItemCode": "ZAD-003",
-      "ItemDescription": "NUTO 68",
-      "Unit": "لتر - LITER",
-      "UnitPrice": 4.6
-    },
-    {
-      "Supplier": "شركة زياد العالمية",
-      "Category": "OILS AND GREASES - زيوت وشحوم",
-      "ItemCode": "ZAD-004",
-      "ItemDescription": "MOBIL HYDROLIC 10W",
-      "Unit": "لتر - LITER",
-      "UnitPrice": 4.5
-    },
-    {
-      "Supplier": "شركة زياد العالمية",
-      "Category": "OILS AND GREASES - زيوت وشحوم",
-      "ItemCode": "ZAD-005",
-      "ItemDescription": "MOBIL GEAR 600*P220",
-      "Unit": "208 LT DRUM",
-      "UnitPrice": 1375.0
-    },
-    {
-      "Supplier": "شركة زياد العالمية",
-      "Category": "OILS AND GREASES - زيوت وشحوم",
-      "ItemCode": "ZAD-006",
-      "ItemDescription": "MOBILUBE HD 80W90 GLS",
-      "Unit": "208 LT DRUM",
-      "UnitPrice": 1375.0
-    },
-    {
-      "Supplier": "شركة زياد العالمية",
-      "Category": "OILS AND GREASES - زيوت وشحوم",
-      "ItemCode": "ZAD-007",
-      "ItemDescription": "GREASE MP2",
-      "Unit": "( 180 kg ) DRUM",
-      "UnitPrice": 1550.0
-    },
-    {
-      "Supplier": "مؤسسة عبد الرحمن الشايع",
-      "Category": "VEHICLES FILTERS - فلاتر سيارات",
-      "ItemCode": "TRE1258",
-      "ItemDescription": "فلتر هواء مرسيدس LB",
-      "Unit": "PIECE - حبة",
-      "UnitPrice": 130.0
-    },
-    {
-      "Supplier": "مؤسسة عبد الرحمن الشايع",
-      "Category": "VEHICLES FILTERS - فلاتر سيارات",
-      "ItemCode": "TRE1219",
-      "ItemDescription": "فلتر هواء MAN",
-      "Unit": "PIECE - حبة",
-      "UnitPrice": 100.0
-    },
-    {
-      "Supplier": "مؤسسة عبد الرحمن الشايع",
-      "Category": "VEHICLES FILTERS - فلاتر سيارات",
-      "ItemCode": "TRE1233",
-      "ItemDescription": "فلتر زيت مرسيدس LB",
-      "Unit": "PIECE - حبة",
-      "UnitPrice": 70.0
-    },
-    {
-      "Supplier": "مؤسسة عبد الرحمن الشايع",
-      "Category": "VEHICLES FILTERS - فلاتر سيارات",
-      "ItemCode": "TRE1232",
-      "ItemDescription": "فلتر زيت MAN",
-      "Unit": "PIECE - حبة",
-      "UnitPrice": 60.0
-    },
-    {
-      "Supplier": "مؤسسة عبد الرحمن الشايع",
-      "Category": "EQUP. FILTERS - فلاتر معدات ",
-      "ItemCode": "TRE1223",
-      "ItemDescription": "فلتر هواء تويوتا",
-      "Unit": "PIECE - حبة",
-      "UnitPrice": 50.0
-    },
-    {
-      "Supplier": "مؤسسة عبد الرحمن الشايع",
-      "Category": "VEHICLES FILTERS - فلاتر سيارات",
-      "ItemCode": "TRE1224",
-      "ItemDescription": "فلتر هواء مازدا",
-      "Unit": "PIECE - حبة",
-      "UnitPrice": 45.0
-    },
-    {
-      "Supplier": "مؤسسة عبد العزيز الفريح",
-      "Category": "VEHICLES BELTS - سيور سيارات",
-      "ItemCode": "1504056",
-      "ItemDescription": "سير ألماني - OPTIBELT B-56",
-      "Unit": "PIECE - حبة",
-      "UnitPrice": 40.0
-    },
-    {
-      "Supplier": "مؤسسة عبد العزيز الفريح",
-      "Category": "EQUIPMENT BELTS - سيور معدات",
-      "ItemCode": "1504086",
-      "ItemDescription": "سير ألماني - OPTIBELT B-86",
-      "Unit": "PIECE - حبة",
-      "UnitPrice": 50.0
-    },
-    {
-      "Supplier": "مؤسسة عبد العزيز الفريح",
-      "Category": "EQUIPMENT BELTS - سيور معدات",
-      "ItemCode": "1504122",
-      "ItemDescription": "سير ألماني OPTIBELT B-122",
-      "Unit": "PIECE - حبة",
-      "UnitPrice": 70.0
+import 'dart:convert';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:intl/intl.dart';
+import 'database_helper.dart';
+
+class NewOrderScreen extends StatefulWidget {
+  @override
+  _NewOrderScreenState createState() => _NewOrderScreenState();
+}
+
+class _NewOrderScreenState extends State<NewOrderScreen> {
+  final TextEditingController _orderNoController = TextEditingController();
+
+  List<String> _suppliers = [];
+  List<String> _branches = [];
+  List<String> _departments = [];
+  List<String> _editors = [];
+  List<String> _directors = [];
+
+  String? _selectedSupplier;
+  String? _selectedBranch;
+  String? _selectedDepartment;
+  String? _selectedEditor;
+  String? _selectedDirector;
+
+  DateTime _selectedDate = DateTime.now();
+  List> _orderItems = [];
+  bool _isLoadingDefinitions = true;
+
+  @override
+  void initState() {
+    super.initState();
+    _orderNoController.text = (1000 + DateTime.now().minute * 10 + DateTime.now().second).toString();
+    _loadDefinitions();
+  }
+
+  Future<void> _loadDefinitions() async {
+    try {
+      final String jsonString = await rootBundle.loadString('assets/seed_data.json');
+      final Map<String, dynamic> data = jsonDecode(jsonString);
+      final Map<String, dynamic> definitions = data['definitions'] ?? {};
+
+      List<String> parseList(dynamic rawList) {
+        if (rawList is List) {
+          return rawList.map((e) => e.toString().trim()).where((s) => s.isNotEmpty).toList();
+        }
+        return [];
+      }
+
+      final suppliers = parseList(definitions['الموردين_Suppliers']);
+      final branches = parseList(definitions['الفروع_Branches']);
+      final departments = parseList(definitions['المستودعات_الأقسام_Departments']);
+      final editors = parseList(definitions['محررو_الطلبات_Editors']);
+      final directors = parseList(definitions['المدراء_المسؤولون_Directors']);
+
+      setState(() {
+        _suppliers = suppliers;
+        _branches = branches;
+        _departments = departments;
+        _editors = editors;
+        _directors = directors;
+
+        if (_suppliers.isNotEmpty) _selectedSupplier = _suppliers.first;
+        if (_branches.isNotEmpty) _selectedBranch = _branches.first;
+        if (_departments.isNotEmpty) _selectedDepartment = _departments.first;
+        if (_editors.isNotEmpty) _selectedEditor = _editors.first;
+        if (_directors.isNotEmpty) _selectedDirector = _directors.first;
+
+        _isLoadingDefinitions = false;
+      });
+    } catch (e) {
+      setState(() => _isLoadingDefinitions = false);
     }
-  ]
+  }
+
+  double get _totalAmount {
+    return _orderItems.fold(0.0, (double sum, item) {
+      final val = item['total'];
+      final num parsed = val is num ? val : (num.tryParse(val.toString()) ?? 0.0);
+      return sum + parsed.toDouble();
+    });
+  }
+
+  void _addItemDialog() async {
+    List> allItems = await DatabaseHelper.instance.searchItems('');
+    List> itemsList = _selectedSupplier == null
+        ? allItems
+        : allItems.where((i) => i['supplier'] == _selectedSupplier).toList();
+
+    if (itemsList.isEmpty) {
+      itemsList = allItems;
+    }
+
+    Map<String, dynamic>? selectedItem;
+    final qtyController = TextEditingController(text: '1');
+    final priceController = TextEditingController();
+
+    showDialog(
+      context: context,
+      builder: (ctx) => StatefulBuilder(
+        builder: (context, setDialogState) => AlertDialog(
+          title: Text('إضافة صنف للطلب', textAlign: TextAlign.right),
+          content: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                DropdownButtonFormField>(
+                  isExpanded: true,
+                  decoration: InputDecoration(labelText: 'اختر الصنف'),
+                  items: itemsList.map((item) {
+                    return DropdownMenuItem(
+                      value: item,
+                      child: Text("${item['item_code']} - ${item['description']}",
+                          style: TextStyle(fontSize: 12), overflow: TextOverflow.ellipsis),
+                    );
+                  }).toList(),
+                  onChanged: (val) {
+                    setDialogState(() {
+                      selectedItem = val;
+                      priceController.text = (val?['unit_price'] ?? 0.0).toString();
+                    });
+                  },
+                ),
+                SizedBox(height: 10),
+                TextField(
+                  controller: qtyController,
+                  decoration: InputDecoration(labelText: 'الكمية المطلوبة'),
+                  keyboardType: TextInputType.numberWithOptions(decimal: true),
+                ),
+                SizedBox(height: 10),
+                TextField(
+                  controller: priceController,
+                  decoration: InputDecoration(labelText: 'سعر الوحدة'),
+                  keyboardType: TextInputType.numberWithOptions(decimal: true),
+                ),
+              ],
+            ),
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(ctx),
+              child: Text('إلغاء'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                if (selectedItem != null) {
+                  double qty = double.tryParse(qtyController.text) ?? 1.0;
+                  double price = double.tryParse(priceController.text) ?? 0.0;
+                  setState(() {
+                    _orderItems.add({
+                      'item_code': selectedItem!['item_code']?.toString() ?? '',
+                      'description': selectedItem!['description']?.toString() ?? '',
+                      'unit': selectedItem!['unit']?.toString() ?? '',
+                      'quantity': qty,
+                      'unit_price': price,
+                      'total': qty * price,
+                    });
+                  });
+                  Navigator.pop(ctx);
+                }
+              },
+              child: Text('إضافة'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  void _saveOrder() async {
+    if (_orderItems.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('الرجاء إضافة أصناف أولاً للطلب')),
+      );
+      return;
+    }
+
+    int orderNumber = int.tryParse(_orderNoController.text) ?? 1005;
+
+    await DatabaseHelper.instance.insertOrder({
+      'order_no': orderNumber,
+      'order_date': DateFormat('yyyy-MM-dd').format(_selectedDate),
+      'branch': _selectedBranch ?? '',
+      'department': _selectedDepartment ?? '',
+      'supplier': _selectedSupplier ?? '',
+      'editor': _selectedEditor ?? '',
+      'director': _selectedDirector ?? '',
+      'status': 'مرحل',
+    }, _orderItems);
+
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text('تم ترحيل الطلب بنجاح رقم: $orderNumber')),
+    );
+    Navigator.pop(context, true);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (_isLoadingDefinitions) {
+      return Scaffold(
+        appBar: AppBar(title: Text('طلب شراء جديد')),
+        body: Center(child: CircularProgressIndicator()),
+      );
+    }
+
+    return Scaffold(
+      appBar: AppBar(title: Text('طلب شراء جديد')),
+      body: Directionality(
+        textDirection: TextDirection.rtl,
+        child: Padding(
+          padding: EdgeInsets.all(12),
+          child: Column(
+            children: [
+              Card(
+                child: Padding(
+                  padding: EdgeInsets.all(12),
+                  child: Column(
+                    children: [
+                      Row(
+                        children: [
+                          Expanded(
+                            child: TextField(
+                              controller: _orderNoController,
+                              decoration: InputDecoration(labelText: 'رقم الطلب'),
+                              keyboardType: TextInputType.number,
+                            ),
+                          ),
+                          SizedBox(width: 10),
+                          Expanded(
+                            child: Text(
+                              "التاريخ: ${DateFormat('yyyy-MM-dd').format(_selectedDate)}",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: DropdownButtonFormField<String>(
+                              value: _selectedBranch,
+                              decoration: InputDecoration(labelText: 'الفرع'),
+                              items: _branches
+                                  .map((b) => DropdownMenuItem(value: b, child: Text(b, overflow: TextOverflow.ellipsis)))
+                                  .toList(),
+                              onChanged: (v) => setState(() => _selectedBranch = v),
+                            ),
+                          ),
+                          SizedBox(width: 10),
+                          Expanded(
+                            child: DropdownButtonFormField<String>(
+                              value: _selectedSupplier,
+                              decoration: InputDecoration(labelText: 'المورد'),
+                              items: _suppliers
+                                  .map((s) => DropdownMenuItem(value: s, child: Text(s, overflow: TextOverflow.ellipsis)))
+                                  .toList(),
+                              onChanged: (v) => setState(() => _selectedSupplier = v),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: DropdownButtonFormField<String>(
+                              value: _selectedDepartment,
+                              decoration: InputDecoration(labelText: 'القسم / المستودع'),
+                              items: _departments
+                                  .map((d) => DropdownMenuItem(value: d, child: Text(d, overflow: TextOverflow.ellipsis)))
+                                  .toList(),
+                              onChanged: (v) => setState(() => _selectedDepartment = v),
+                            ),
+                          ),
+                          SizedBox(width: 10),
+                          Expanded(
+                            child: DropdownButtonFormField<String>(
+                              value: _selectedEditor,
+                              decoration: InputDecoration(labelText: 'محرر الطلب'),
+                              items: _editors
+                                  .map((e) => DropdownMenuItem(value: e, child: Text(e, overflow: TextOverflow.ellipsis)))
+                                  .toList(),
+                              onChanged: (v) => setState(() => _selectedEditor = v),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: DropdownButtonFormField<String>(
+                              value: _selectedDirector,
+                              decoration: InputDecoration(labelText: 'المدير المسؤول'),
+                              items: _directors
+                                  .map((m) => DropdownMenuItem(value: m, child: Text(m, overflow: TextOverflow.ellipsis)))
+                                  .toList(),
+                              onChanged: (v) => setState(() => _selectedDirector = v),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(height: 8),
+              Expanded(
+                child: _orderItems.isEmpty
+                    ? Center(child: Text("لا توجد أصناف مضافة. اضغط 'إضافة صنف' للبدء"))
+                    : ListView.separated(
+                        itemCount: _orderItems.length,
+                        separatorBuilder: (_, __) => Divider(height: 1),
+                        itemBuilder: (ctx, idx) {
+                          final item = _orderItems[idx];
+                          return ListTile(
+                            title: Text("${item['description']} (${item['item_code']})"),
+                            subtitle: Text("الكمية: ${item['quantity']} ${item['unit']} × ${item['unit_price']}"),
+                            trailing: Text("${item['total']} ر.س", style: TextStyle(fontWeight: FontWeight.bold)),
+                          );
+                        },
+                      ),
+              ),
+              Container(
+                padding: EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: Colors.blue.shade50,
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text("الإجمالي: ${_totalAmount.toStringAsFixed(2)} ر.س",
+                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                    Row(
+                      children: [
+                        OutlinedButton.icon(
+                          icon: Icon(Icons.add),
+                          label: Text('إضافة صنف'),
+                          onPressed: _addItemDialog,
+                        ),
+                        SizedBox(width: 8),
+                        ElevatedButton.icon(
+                          icon: Icon(Icons.check),
+                          label: Text('ترحيل'),
+                          onPressed: _saveOrder,
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
 }
