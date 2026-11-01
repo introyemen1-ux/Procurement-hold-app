@@ -19,15 +19,15 @@ class ProcurementApp extends StatelessWidget {
         primarySwatch: Colors.indigo,
         fontFamily: 'Cairo',
       ),
-      localizationsDelegates: const [
+      localizationsDelegates: [
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-      supportedLocales: const [
+      supportedLocales: [
         Locale('ar', 'SA'),
       ],
-      locale: const Locale('ar', 'SA'),
+      locale: Locale('ar', 'SA'),
       home: HomeScreen(),
     );
   }
@@ -39,7 +39,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  var _orders = [];
+  List> _orders = [];
   bool _loading = true;
 
   @override
@@ -61,24 +61,24 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('طلبات الشراء المرحلة'),
+        title: Text('طلبات الشراء المرحلة'),
         actions: [
           IconButton(
-            icon: const Icon(Icons.refresh),
+            icon: Icon(Icons.refresh),
             onPressed: _loadOrders,
           ),
         ],
       ),
       body: _loading
-          ? const Center(child: CircularProgressIndicator())
+          ? Center(child: CircularProgressIndicator())
           : _orders.isEmpty
-              ? const Center(child: Text('لا توجد طلبات شراء مسجلة بعد'))
+              ? Center(child: Text('لا توجد طلبات شراء مسجلة بعد'))
               : ListView.builder(
                   itemCount: _orders.length,
                   itemBuilder: (ctx, idx) {
                     final order = _orders[idx];
                     return Card(
-                      margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                      margin: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                       child: ListTile(
                         leading: CircleAvatar(
                           child: Text("${order['order_no']}"),
@@ -86,9 +86,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         title: Text("${order['supplier']} - ${order['branch']}"),
                         subtitle: Text("التاريخ: ${order['order_date']} | المحرر: ${order['editor']}"),
                         trailing: IconButton(
-                          icon: const Icon(Icons.print, color: Colors.indigo),
+                          icon: Icon(Icons.print, color: Colors.indigo),
                           onPressed: () async {
-                            final items = await DatabaseHelper.instance.getOrderItems(order['order_no']);
+                            final int orderNo = int.tryParse(order['order_no'].toString()) ?? 0;
+                            final items = await DatabaseHelper.instance.getOrderItems(orderNo);
                             await OrderPrinter.printOrder(order, items);
                           },
                         ),
@@ -97,8 +98,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   },
                 ),
       floatingActionButton: FloatingActionButton.extended(
-        icon: const Icon(Icons.add),
-        label: const Text('طلب شراء جديد'),
+        icon: Icon(Icons.add),
+        label: Text('طلب شراء جديد'),
         onPressed: () async {
           final res = await Navigator.push(
             context,
